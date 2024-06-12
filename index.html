@@ -6,40 +6,45 @@
     <title>Simple Calculator</title>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="result" readonly>
-        <table>
-            <tr>
-                <td><button onclick="appendNumber('7')">7</button></td>
-                <td><button onclick="appendNumber('8')">8</button></td>
-                <td><button onclick="appendNumber('9')">9</button></td>
-                <td><button onclick="appendOperation('/')">/</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendNumber('4')">4</button></td>
-                <td><button onclick="appendNumber('5')">5</button></td>
-                <td><button onclick="appendNumber('6')">6</button></td>
-                <td><button onclick="appendOperation('*')">*</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendNumber('1')">1</button></td>
-                <td><button onclick="appendNumber('2')">2</button></td>
-                <td><button onclick="appendNumber('3')">3</button></td>
-                <td><button onclick="appendOperation('-')">-</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="clearScreen()">C</button></td>
-                <td><button onclick="appendNumber('0')">0</button></td>
-                <td><button onclick="appendOperation('.')">.</button></td>
-                <td><button onclick="appendOperation('+')">+</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="appendOperation('(')">(</button></td>
-                <td><button onclick="appendOperation(')')">)</button></td>
-                <td><button onclick="appendOperation('^')">^</button></td>
-                <td><button onclick="calculate()">=</button></td>
-            </tr>
-        </table>
+    <div class="calculator-container">
+        <div class="answer-box">
+            <input type="text" id="answer" readonly>
+        </div>
+        <div class="calculator">
+            <input type="text" id="result" readonly>
+            <table>
+                <tr>
+                    <td><button onclick="appendNumber('7')">7</button></td>
+                    <td><button onclick="appendNumber('8')">8</button></td>
+                    <td><button onclick="appendNumber('9')">9</button></td>
+                    <td><button onclick="appendOperation('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('4')">4</button></td>
+                    <td><button onclick="appendNumber('5')">5</button></td>
+                    <td><button onclick="appendNumber('6')">6</button></td>
+                    <td><button onclick="appendOperation('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('1')">1</button></td>
+                    <td><button onclick="appendNumber('2')">2</button></td>
+                    <td><button onclick="appendNumber('3')">3</button></td>
+                    <td><button onclick="appendOperation('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="clearScreen()">C</button></td>
+                    <td><button onclick="appendNumber('0')">0</button></td>
+                    <td><button onclick="appendOperation('.')">.</button></td>
+                    <td><button onclick="appendOperation('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendOperation('(')">(</button></td>
+                    <td><button onclick="appendOperation(')')">)</button></td>
+                    <td><button onclick="appendOperation('^')">^</button></td>
+                    <td><button onclick="calculate()">=</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <script>
         let currentNumber = "";
@@ -89,6 +94,7 @@
             }
             currentNumber = result.toString();
             document.getElementById("result").value = currentNumber;
+            document.getElementById("answer").value = currentNumber;
         }
     </script>
 </body>
