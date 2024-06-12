@@ -31,12 +31,30 @@
                 <td><button onclick="clearScreen()">C</button></td>
                 <td><button onclick="appendNumber('0')">0</button></td>
                 <td><button onclick="appendOperation('.')">.</button></td>
+                <td><button onclick="appendOperation('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendOperation('(')">(</button></td>
+                <td><button onclick="appendOperation(')')">)</button></td>
+                <td><button onclick="appendOperation('^')">^</button></td>
                 <td><button onclick="calculate()">=</button></td>
             </tr>
         </table>
     </div>
     <script>
-        // JavaScript functions for buttons will be here
+        function appendNumber(number) {
+            document.getElementById("result").value += number;
+        }
+
+        function appendOperation(operator) {
+            document.getElementById("result").value += operator;
+        }
+
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+
+        // JavaScript function for calculation will be here
     </script>
 </body>
 </html>
